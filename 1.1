@@ -1,0 +1,75 @@
+def libro():
+  global autor, fecha, titulo, editorial, cita, web, inicio, apellido, nombre
+  apellido = input("Digite el primer apellido del autor: ")
+  nombre = input("Digite la inicial del primer nombre del Autor (ejemplo:A): ")
+  fecha = input("Digite el año de publicación: ")
+  titulo = input("Digite el titulo del libro: ")
+  editorial = input("Digite el editorial: ")
+  cita = str(str(apellido) + "," + " " + str(nombre) + "." + " " ) + str("(" + fecha + ")" + "." + " " ) + str(titulo + "." + " " ) + str(editorial + "." + " ")
+  print("=====================================================")
+  print("La referencia es: " + cita)
+  
+def revista():
+  apellido = input("Digite el primer apellido del autor: ")
+  nombre = input("Digite la inicial del primer nombre del Autor (ejemplo:A): ")
+  fecha = input("Digite el año de publicación: ")
+  titulo = input("Digite el titulo del libro: ")
+  editorial = input("Digite el editorial: ")
+  cita = str(str(apellido) + "," + " " + str(nombre) + "." + " " ) + str("(" + fecha + ")" + "." + " " ) + str(titulo + "." + " " ) + str(editorial + "." + " ")
+  print("La referencia es: " + cita)
+def pagina_web():
+  apellido = input("Digite el primer apellido del autor: ")
+  nombre = input("Digite la inicial del primer nombre del Autor (ejemplo:A): ")
+  fecha = input("Digite el año de publicación: ")
+  titulo = input("Digite el titulo del libro: ")
+  editorial = input("Digite el editorial: ")
+  cita = str(str(apellido) + "," + " " + str(nombre) + "." + " " ) + str("(" + fecha + ")" + "." + " " ) + str(titulo + "." + " " ) + str(editorial + "." + " ")
+  print("=====================================================")
+  print("La referencia es: " + cita)
+  
+
+  cita = str(autor) + str(fecha) + str(titulo) + str(editorial)
+  print(cita)
+def periodico():
+  apellido = input("Digite el primer apellido del autor: ")
+  nombre = input("Digite la inicial del primer nombre del Autor (ejemplo:A): ")
+  fecha = input("Digite el año de publicación: ")
+  titulo = input("Digite el titulo del libro: ")
+  editorial = input("Digite el editorial: ")
+  cita = str(str(apellido) + "," + " " + str(nombre) + "." + " " ) + str("(" + fecha + ")" + "." + " " ) + str(titulo + "." + " " ) + str(editorial + "." + " ")
+  print("=====================================================")
+  print("La referencia es: " + cita)
+
+  
+
+
+print("Bienvenido al generador de Apa")
+print("=====================================================")
+while(True):
+  inicio = input("Desea continuar (si o no): ")
+  if inicio =="si":
+    print("=====================================================")
+    tipo = input("Digite el tipo de referencia que desea usar (libro, revista, pagina web o periodico: ")
+    if tipo == "libro":
+      print("=====================================================")
+      libro() 
+      print("=====================================================")
+    elif tipo == "revista":
+      print("=====================================================")
+      revista()
+      print("=====================================================")
+    elif tipo == "pagina web":
+      print("=====================================================")
+      pagina_web()
+      print("=====================================================")
+    elif tipo == "periodico":
+      print("=====================================================")
+      periodico()
+      print("=====================================================")
+    else:
+      print("=====================================================")
+      print("Porfavor digite un tipo valido") 
+      print("=====================================================")
+  else:
+    exit()
+    
