@@ -1,0 +1,51 @@
+def libro():
+  global autor, fecha, titulo, editorial, cita, web, no
+  autor = input("Digite el nombre del autor: ")
+  fecha = input("Digite la fecha de publicación: ")
+  titulo = input("Digite el titulo del libro: ")
+  editorial = input("Digite el editorial: ")
+  cita = str(autor + "." + " " ) + str(fecha + "." + " " ) + str(titulo + "." + " " ) + str(editorial + "." + " ")
+  print(cita)
+  
+
+  
+def revista():
+  autor = input("Digite el nombre del autor: ")
+  fecha = input("Digite la fecha de publicación: ")
+  titulo = input("Digite el titulo del libro: ")
+  editorial = input("Digite el editorial: ")
+  cita = str(autor) + str(fecha) + str(titulo) + str(editorial)
+  print(cita)
+def pagina_web():
+  autor = input("Digite el nombre del autor: ")
+  fecha = input("Digite la fecha de publicación: ")
+  titulo = input("Digite el titulo del libro: ")
+  editorial = input("Digite el editorial: ")
+  
+
+  cita = str(autor) + str(fecha) + str(titulo) + str(editorial)
+  print(cita)
+def periodico():
+  autor = input("Digite el nombre del autor: ")
+  fecha = input("Digite la fecha de publicación: ")
+  titulo = input("Digite el titulo del libro: ")
+  editorial = input("Digite el editorial: ")
+  cita = str(autor) + str(fecha) + str(titulo) + str(editorial)
+  print(cita)
+
+
+
+
+print("Bienvenido el editor de Apa")
+tipo = input("Digite el tipo de referencia que desea usar (libro, revista, pagina web o periodico: ")
+if tipo == "libro":
+  libro() 
+  final = input("Desea continuar: ")
+  if final == "no":
+    exit()
+elif tipo == "revista":
+  revista()
+elif tipo == "pagina web":
+  web()
+elif tipo == "periodico":
+  periodico()
