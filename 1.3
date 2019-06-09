@@ -1,0 +1,136 @@
+
+from tkinter import *
+root = Tk()
+ #------------------------------------------Menu-------------
+menubar = Menu(root)
+root.config(menu=menubar)
+
+filemenu = Menu(menubar, tearoff=0)
+filemenu.add_command(label="Nuevo")
+filemenu.add_command(label="Abrir")
+filemenu.add_command(label="Guardar")
+filemenu.add_command(label="Cerrar")
+filemenu.add_separator()
+filemenu.add_command(label="Salir", command=root.quit)
+
+editmenu = Menu(menubar, tearoff=0)
+editmenu.add_command(label="Cortar")
+editmenu.add_command(label="Copiar")
+editmenu.add_command(label="Pegar")
+
+helpmenu = Menu(menubar, tearoff=0)
+helpmenu.add_command(label="Ayuda")
+helpmenu.add_separator()
+helpmenu.add_command(label="Acerca de...")
+
+menubar.add_cascade(label="Archivo", menu=filemenu)
+menubar.add_cascade(label="Editar", menu=editmenu)
+menubar.add_cascade(label="Ayuda", menu=helpmenu)
+
+
+
+root.title("By Magoni")
+root.geometry("600x600")
+root.config(bg="darkslateblue")
+
+
+
+
+
+
+
+
+
+
+
+#----------------------- etiquetas----------------------
+titulo =Label(root, text= "Bienvenido al generador APA by Magoni", fg="snow", bg="darkslateblue")
+titulo.pack(anchor=W)
+titulo.config(font=("Arial", 16))
+titulo.place(x=130, y=10)
+
+libro1 = Label(root, text= "Referencia de libros", fg="snow", bg="darkslateblue")
+libro1.pack(anchor=W)
+libro1.config(font=("Arial", 12))
+libro1.place(x=15, y=60)
+
+apellido = Label(root, text= "Pimer apellido del autor:", fg="snow", bg="darkslateblue")
+apellido.pack(anchor=W)
+apellido.config(font=("Arial", 12))
+apellido.place(x=30, y=90)
+
+inicial = Label(root, text= "Inicial del  nombre del autor", fg="snow", bg="darkslateblue")
+inicial.pack(anchor=W)
+inicial.config(font=("Arial", 12))
+inicial.place(x=30, y=120)
+
+año = Label(root, text= "Año de publiación:", fg="snow", bg="darkslateblue")
+año.pack(anchor=W)
+año.config(font=("Arial", 12))
+año.place(x=30, y=150)
+
+lb = Label(root, text= "Titulo del libro", fg="snow", bg="darkslateblue")
+lb.pack(anchor=W)
+lb.config(font=("Arial", 12))
+lb.place(x=30, y=180)
+ 
+editorial = Label(root, text= "Editorial", fg="snow", bg="darkslateblue")
+editorial.pack(anchor=W)
+editorial.config(font=("Arial", 12))
+editorial.place(x=30, y=210)
+ 
+ref = Label(root, text= "La referencia es: ", fg="snow", bg="darkslateblue")
+ref.pack(anchor=W)
+ref.config(font=("Arial", 12))
+ref.place(x=15, y=273)
+
+#------------------------------------------------entry---------------------------------
+A = Entry(root)
+A.pack()
+A.place(x=240, y=93)
+
+
+N = Entry(root)
+N.pack()
+N.place(x=240, y=123)
+
+year = Entry(root)
+year.pack()
+year.place(x=240, y=153)
+
+t = Entry(root)
+t.pack()
+t.place(x=240, y=183)
+t.config(font=("Arial", 8, "italic"))
+
+
+Ed = Entry(root)
+Ed.pack()
+Ed.place(x=240, y=213)
+
+
+primerpaso=StringVar()
+referencia = Entry(root, width=50, textvariable=primerpaso)
+referencia.pack()
+referencia.place(x=150, y=277)
+
+#-------------------------------------botones---------------------------
+def construir():
+    primerpaso.set( A.get() +  "," + " " + N.get() + "." + " "  + "(" + year.get() + ")" + "." + " "  + t.get() + "." + " "  + Ed.get() + "." + " ") 
+def clear():
+    A.delete(0, 'end')
+    N.delete(0, 'end')
+    year.delete(0, 'end')
+    t.delete(0, 'end')
+    Ed.delete(0, 'end')
+    referencia.delete(0, 'end')
+
+aceptar=Button(root, text="Aceptar", command=construir)
+aceptar.place(x=240, y= 243)
+cancelar=Button(root, text="Cancelar", command=clear)
+cancelar.place(x=300, y= 243)
+
+#---------------------------------------funciones----------------------------
+
+
+root.mainloop()
